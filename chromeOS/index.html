@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flametimiszer for Chromebook</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f8fa;
+    color: #202124;
+}
+
+nav {
+    height: 72px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #dadce0;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #202124;
+}
+
+.logo span {
+    color: #ff6a00;
+}
+
+.back {
+    color: #5f6368;
+    text-decoration: none;
+}
+
+.back:hover {
+    color: #202124;
+}
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 20px;
+    background: #ffffff;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.chrome-badge {
+    display: inline-block;
+    padding: 9px 17px;
+    border-radius: 30px;
+    border: 1px solid #dadce0;
+    background: #f8f9fa;
+    color: #5f6368;
+}
+
+h1 {
+    font-size: clamp(48px, 7vw, 78px);
+    line-height: 1;
+    letter-spacing: -4px;
+    margin: 28px 0;
+}
+
+h1 span {
+    color: #ff6a00;
+}
+
+.description {
+    max-width: 700px;
+    margin: auto;
+    color: #5f6368;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.download {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 17px 35px;
+    border-radius: 10px;
+    background: #ff6a00;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    transition: 0.2s;
+}
+
+.download:hover {
+    background: #ff8128;
+    transform: translateY(-3px);
+}
+
+.small {
+    margin-top: 13px;
+    color: #80868b;
+    font-size: 13px;
+}
+
+.section {
+    padding: 90px 7%;
+    background: #f1f3f4;
+}
+
+.white-section {
+    background: #ffffff;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin: 0 0 15px;
+}
+
+.section-title p {
+    color: #5f6368;
+    line-height: 1.6;
+}
+
+.cards {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 16px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #ff6a00;
+    box-shadow: 0 8px 25px rgba(60, 64, 67, 0.12);
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.card h3 {
+    color: #202124;
+}
+
+.card p {
+    color: #5f6368;
+    line-height: 1.6;
+}
+
+.compatibility {
+    max-width: 900px;
+    margin: auto;
+    padding: 35px;
+    background: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 16px;
+}
+
+.compatibility h3 {
+    margin-top: 0;
+}
+
+.compatibility p {
+    color: #5f6368;
+    line-height: 1.6;
+}
+
+.compatibility-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.item {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 9px;
+    border: 1px solid #dadce0;
+    color: #3c4043;
+}
+
+.notice {
+    max-width: 900px;
+    margin: 25px auto 0;
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #7c2d12;
+    line-height: 1.6;
+}
+
+.faq {
+    max-width: 800px;
+    margin: auto;
+}
+
+details {
+    background: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 12px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+details p {
+    color: #5f6368;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    color: #5f6368;
+    background: #ffffff;
+    border-top: 1px solid #dadce0;
+}
+
+@media (max-width: 800px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .compatibility-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        Flame<span>timiszer</span>
+    </div>
+
+    <a class="back" href="../index.html">
+        ← Back to Flametimiszer
+    </a>
+
+</nav>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="chrome-badge">
+            💻 chromeOS EDITION
+        </div>
+
+        <h1>
+            Flametimiszer for
+            <span>ChromeOS</span>
+        </h1>
+
+        <p class="description">
+            A future Chromebook optimization experience designed
+            around ChromeOS and the hardware available on supported
+            Chromebook devices.
+        </p>
+
+        <a class="download" href="/download/chromeos">
+            🔥 Get Flametimiszer
+        </a>
+
+        <div class="small">
+            Development preview • ChromeOS version
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            Designed for ChromeOS
+        </h2>
+
+        <p>
+            The Chromebook version will have its own interface
+            rather than using the Windows or Linux design.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">💻</div>
+
+            <h3>
+                Chromebook Detection
+            </h3>
+
+            <p>
+                The future website and application can identify
+                supported ChromeOS environments.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">⚡</div>
+
+            <h3>
+                Performance Focus
+            </h3>
+
+            <p>
+                The planned experience will focus on appropriate
+                performance options for Chromebook hardware.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🛡️</div>
+
+            <h3>
+                Safe Approach
+            </h3>
+
+            <p>
+                The application will avoid claiming that unsupported
+                system changes are safe or appropriate.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section white-section">
+
+    <div class="section-title">
+
+        <h2>
+            Chromebook Compatibility
+        </h2>
+
+        <p>
+            Actual application support will depend on ChromeOS
+            capabilities and testing.
+        </p>
+
+    </div>
+
+
+    <div class="compatibility">
+
+        <h3>
+            💻 ChromeOS Edition
+        </h3>
+
+        <p>
+            The Chromebook version will be developed separately
+            from the Windows application because ChromeOS has
+            different system capabilities and restrictions.
+        </p>
+
+        <div class="compatibility-list">
+
+            <div class="item">
+                ✓ Chromebook interface
+            </div>
+
+            <div class="item">
+                ✓ ChromeOS detection planned
+            </div>
+
+            <div class="item">
+                ✓ Hardware information planned
+            </div>
+
+            <div class="item">
+                ✓ Performance tools planned
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="notice">
+
+        <strong>Important:</strong>
+        ChromeOS has different permissions and system controls
+        from Windows and Linux. Flametimiszer will only provide
+        features that are actually supported and appropriate
+        for ChromeOS.
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            Frequently Asked Questions
+        </h2>
+
+    </div>
+
+
+    <div class="faq">
+
+        <details>
+
+            <summary>
+                Is the Chromebook application available?
+            </summary>
+
+            <p>
+                Not yet. The Chromebook version is planned and
+                will be developed separately.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Can a Chromebook run the Windows application?
+            </summary>
+
+            <p>
+                Not normally. ChromeOS and Windows use different
+                application environments, which is why Flametimiszer
+                will have separate platform support.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Will every Chromebook be supported?
+            </summary>
+
+            <p>
+                Support will depend on the capabilities of the
+                Chromebook and the ChromeOS environment.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Can I download Flametimiszer now?
+            </summary>
+
+            <p>
+                The current download is only a development
+                placeholder. The real application will be added
+                when it has been developed and tested.
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    Flametimiszer © 2026
+
+</footer>
+
+</body>
+</html>

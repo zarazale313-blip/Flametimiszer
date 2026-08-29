@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flametimiszer for Windows</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #07080c;
+    color: white;
+}
+
+nav {
+    height: 72px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10, 11, 16, 0.95);
+    border-bottom: 1px solid #252934;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #ff6a00;
+}
+
+.back {
+    color: #999;
+    text-decoration: none;
+}
+
+.back:hover {
+    color: white;
+}
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.windows-badge {
+    display: inline-block;
+    padding: 9px 17px;
+    border-radius: 30px;
+    border: 1px solid #3b3028;
+    background: rgba(255, 106, 0, 0.08);
+    color: #ff914d;
+}
+
+h1 {
+    font-size: clamp(48px, 7vw, 78px);
+    line-height: 1;
+    letter-spacing: -4px;
+    margin: 28px 0;
+}
+
+h1 span {
+    color: #ff6a00;
+}
+
+.description {
+    max-width: 700px;
+    margin: auto;
+    color: #999faa;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.download {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 17px 35px;
+    border-radius: 10px;
+    background: #ff6a00;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    transition: 0.2s;
+}
+
+.download:hover {
+    background: #ff8128;
+    transform: translateY(-3px);
+}
+
+.small {
+    margin-top: 13px;
+    color: #656b76;
+    font-size: 13px;
+}
+
+.section {
+    padding: 90px 7%;
+    background: #0d0f15;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin: 0 0 15px;
+}
+
+.section-title p {
+    color: #858b97;
+    line-height: 1.6;
+}
+
+.cards {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 30px;
+    background: #141720;
+    border: 1px solid #272b36;
+    border-radius: 15px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #ff6a00;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.card h3 {
+    color: #ff7a20;
+}
+
+.card p {
+    color: #858b97;
+    line-height: 1.6;
+}
+
+.compatibility {
+    max-width: 900px;
+    margin: auto;
+    padding: 35px;
+    background: #11141b;
+    border: 1px solid #282c37;
+    border-radius: 16px;
+}
+
+.compatibility h3 {
+    margin-top: 0;
+}
+
+.compatibility p {
+    color: #858b97;
+    line-height: 1.6;
+}
+
+.compatibility-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.item {
+    padding: 15px;
+    background: #090b10;
+    border-radius: 9px;
+    border: 1px solid #222631;
+    color: #bbb;
+}
+
+.faq {
+    max-width: 800px;
+    margin: auto;
+}
+
+details {
+    background: #12151d;
+    border: 1px solid #252934;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 12px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+details p {
+    color: #858b97;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    color: #606672;
+    border-top: 1px solid #20232c;
+}
+
+@media (max-width: 800px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .compatibility-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        Flame<span>timiszer</span>
+    </div>
+
+    <a class="back" href="../index.html">
+        ← Back to Flametimiszer
+    </a>
+
+</nav>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="windows-badge">
+            🪟 WINDOWS EDITION
+        </div>
+
+        <h1>
+            Flametimiszer for
+            <span>Windows</span>
+        </h1>
+
+        <p class="description">
+            A future Windows optimization application designed
+            to analyze your system hardware and provide
+            appropriate performance recommendations.
+        </p>
+
+        <a class="download" href="/download/windows">
+            🔥 Download Flametimiszer
+        </a>
+
+        <div class="small">
+            Development preview • Windows version
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            What Flametimiszer Will Do
+        </h2>
+
+        <p>
+            The Windows application is being designed around
+            automatic hardware detection and safe optimization.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">🖥️</div>
+
+            <h3>
+                Detect Hardware
+            </h3>
+
+            <p>
+                Identify important information about your
+                processor, graphics hardware, memory and
+                Windows installation.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">⚙️</div>
+
+            <h3>
+                Analyze Your System
+            </h3>
+
+            <p>
+                Use detected hardware information to determine
+                which optimization options are appropriate.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">⚡</div>
+
+            <h3>
+                Optimize
+            </h3>
+
+            <p>
+                Apply supported optimizations through a simple
+                interface instead of requiring users to manually
+                search through system settings.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            Windows Compatibility
+        </h2>
+
+        <p>
+            The Windows website interface is shared between
+            supported Windows systems.
+        </p>
+
+    </div>
+
+
+    <div class="compatibility">
+
+        <h3>
+            🪟 Windows Edition
+        </h3>
+
+        <p>
+            Flametimiszer is being planned with Windows PCs and
+            laptops as the first supported platform.
+        </p>
+
+        <div class="compatibility-list">
+
+            <div class="item">
+                ✓ Windows 64-bit
+            </div>
+
+            <div class="item">
+                ✓ Other supported Windows systems
+            </div>
+
+            <div class="item">
+                ✓ Desktop PCs
+            </div>
+
+            <div class="item">
+                ✓ Laptops
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            Frequently Asked Questions
+        </h2>
+
+    </div>
+
+
+    <div class="faq">
+
+        <details>
+
+            <summary>
+                Is Flametimiszer available right now?
+            </summary>
+
+            <p>
+                The application itself is still being developed.
+                The current download is only a development
+                placeholder.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Will it automatically change my PC?
+            </summary>
+
+            <p>
+                The planned application will analyze your system
+                and can eventually provide supported optimization
+                actions. Important changes should be clearly
+                explained before they are applied.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Will there be other versions?
+            </summary>
+
+            <p>
+                Yes. The website is being organized so Linux and
+                Chromebook versions can have their own interfaces
+                and appropriate downloads.
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    Flametimiszer © 2026
+
+</footer>
+
+</body>
+</html>

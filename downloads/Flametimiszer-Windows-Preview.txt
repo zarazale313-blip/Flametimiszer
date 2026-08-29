@@ -1,0 +1,3 @@
+Flametimiszer Windows Development Preview
+
+The actual Flametimiszer application is currently being developed.
